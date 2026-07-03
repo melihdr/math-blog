@@ -24,11 +24,18 @@ export default async function EditPostPage({
 
   return (
     <main className="max-w-4xl mx-auto p-8">
-      <div className="mb-6">
-        <Link href="/admin" className="text-sm text-gray-600 hover:underline">
-          ← Dashboarda dön
-        </Link>
-      </div>
+<div className="mb-6 flex items-center justify-between">
+  <Link href="/admin" className="text-sm text-gray-600 hover:underline">
+    ← Dashboarda dön
+  </Link>
+  <Link
+    href={`/${post.slug}?preview=1`}
+    target="_blank"
+    className="text-sm text-gray-600 hover:underline"
+  >
+    Önizleme (yeni sekme) ↗
+  </Link>
+</div>
       <h1 className="text-3xl font-bold mb-8">Yazıyı düzenle</h1>
       <PostForm mode="edit" initialPost={post} />
     </main>

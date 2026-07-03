@@ -41,25 +41,32 @@ export default async function AdminDashboard() {
         <ul className="space-y-2">
           {posts.map((post) => (
             <li
-              key={post.id}
-              className="flex items-center justify-between p-4 border border-gray-200 rounded hover:bg-gray-50"
-            >
-              <div>
-                <Link
-                  href={`/admin/edit/${post.id}`}
-                  className="font-medium hover:underline"
-                >
-                  {post.title || '(başlıksız)'}
-                </Link>
-                <p className="text-sm text-gray-500">
-                  /{post.slug}
-                  {' · '}
-                  {post.published ? 'Yayınlandı' : 'Taslak'}
-                  {' · '}
-                  {new Date(post.updated_at).toLocaleDateString('tr-TR')}
-                </p>
-              </div>
-            </li>
+  key={post.id}
+  className="flex items-center justify-between p-4 border border-gray-200 rounded hover:bg-gray-50"
+>
+  <div>
+    <Link
+      href={`/admin/edit/${post.id}`}
+      className="font-medium hover:underline"
+    >
+      {post.title || '(başlıksız)'}
+    </Link>
+    <p className="text-sm text-gray-500">
+      /{post.slug}
+      {' · '}
+      {post.published ? 'Yayınlandı' : 'Taslak'}
+      {' · '}
+      {new Date(post.updated_at).toLocaleDateString('tr-TR')}
+    </p>
+  </div>
+  <Link
+    href={`/${post.slug}?preview=1`}
+    target="_blank"
+    className="text-sm text-gray-600 hover:underline"
+  >
+    Önizleme ↗
+  </Link>
+</li>
           ))}
         </ul>
       )}
