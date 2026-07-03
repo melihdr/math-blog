@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
+import MdxContent from '@/components/MdxContent'
 
 export const dynamic = 'force-dynamic'
 
@@ -42,7 +43,7 @@ export default async function PostPage({
           </p>
         </header>
 
-        <div className="whitespace-pre-wrap">{post.body}</div>
+        <MdxContent source={post.body} />
       </article>
     </main>
   )
