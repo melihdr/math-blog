@@ -26,15 +26,15 @@ export default async function PostPage({
   return (
     <main className="max-w-2xl mx-auto p-8">
       <div className="mb-8">
-        <Link href="/" className="text-sm text-gray-600 hover:underline">
+        <Link href="/" className="text-sm text-gray-600 dark:text-gray-400 hover:underline">
           ← Tüm yazılar
         </Link>
       </div>
 
       <article>
         <header className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">{post.title}</h1>
-          <p className="text-sm text-gray-500">
+<h1 className="text-3xl font-bold mb-2 text-gray-900 dark:text-gray-100">{post.title}</h1>
+<p className="text-sm text-gray-500 dark:text-gray-400">
             {new Date(post.updated_at).toLocaleDateString('tr-TR', {
               year: 'numeric',
               month: 'long',

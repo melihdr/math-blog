@@ -8,7 +8,7 @@ type Props = {
 
 export default function MdxContent({ source }: Props) {
   return (
-    <div className="prose prose-neutral max-w-none">
+<div className="prose prose-neutral dark:prose-invert max-w-none">
       <MDXRemote
         source={source}
         options={{
